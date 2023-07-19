@@ -1,0 +1,16 @@
+Education category: Some-college - Precision: 0.64 - Recall: 0.26 - Fbeta: 0.37 
+Education category: HS-grad - Precision: 0.58 - Recall: 0.24 - Fbeta: 0.34 
+Education category: 7th-8th - Precision: 0.25 - Recall: 0.11 - Fbeta: 0.15 
+Education category: Masters - Precision: 0.91 - Recall: 0.29 - Fbeta: 0.44 
+Education category: 1st-4th - Precision: 0.00 - Recall: 0.00 - Fbeta: 1.00 
+Education category: Bachelors - Precision: 0.84 - Recall: 0.29 - Fbeta: 0.43 
+Education category: Assoc-acdm - Precision: 0.65 - Recall: 0.20 - Fbeta: 0.31 
+Education category: Assoc-voc - Precision: 0.70 - Recall: 0.18 - Fbeta: 0.29 
+Education category: 5th-6th - Precision: 0.33 - Recall: 0.17 - Fbeta: 0.22 
+Education category: Prof-school - Precision: 1.00 - Recall: 0.37 - Fbeta: 0.54 
+Education category: 10th - Precision: 0.80 - Recall: 0.24 - Fbeta: 0.36 
+Education category: 9th - Precision: 0.67 - Recall: 0.29 - Fbeta: 0.40 
+Education category: 11th - Precision: 0.75 - Recall: 0.43 - Fbeta: 0.55 
+Education category: Doctorate - Precision: 1.00 - Recall: 0.31 - Fbeta: 0.47 
+Education category: Preschool - Precision: 0.00 - Recall: 1.00 - Fbeta: 0.00 
+Education category: 12th - Precision: 0.50 - Recall: 0.33 - Fbeta: 0.40 

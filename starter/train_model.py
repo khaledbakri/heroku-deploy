@@ -27,6 +27,24 @@ def preprocess_data(X, encoder):
     
     return X
 
+def compute_metrics_on_slice_data(model, test):
+    f = open("slice_output.txt", "w")
+    education_categories = test["education"].unique()
+    for education_category in education_categories:
+        select_category = test["education"] == education_category
+        X_filtered = test[select_category]
+        X, y, _, _ = process_data(
+            X_filtered, categorical_features=cat_features, label="salary", training=False, encoder=encoder, lb=lb
+        )
+        preds = inference(model, X)
+
+        precision, recall, fbeta = compute_model_metrics(y, preds)
+        f.write("Education category: %s - " % education_category)
+        f.write("Precision: %.2f - " %  precision)
+        f.write("Recall: %.2f - " %  recall)
+        f.write("Fbeta: %.2f \n" %  fbeta)
+    f.close()
+
 if __name__ == "__main__":
     # Load the data
     data = pd.read_csv('../data/census.csv')
@@ -49,21 +67,9 @@ if __name__ == "__main__":
         train, categorical_features=cat_features, label="salary", training=True
     )
 
-    # Proces the test data with the process_data function.
-    X_test, y_test, _, _ = process_data(
-        test, categorical_features=cat_features, label="salary", training=False, encoder=encoder, lb=lb
-    )
-
     # Train and save a model.
     model = train_model(X_train, y_train)
-    preds = inference(model, X_test)
-
-    precision, recall, fbeta = compute_model_metrics(y_test, preds)
-
-    print("Precision:", precision)
-    print("Recall", recall)
-    print("fbeta", fbeta)
-
+    compute_metrics_on_slice_data(model, test)
     joblib.dump(model, '../model/model.joblib')
     joblib.dump(encoder, '../model/encoder.joblib')
 

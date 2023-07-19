@@ -10,3 +10,12 @@ The data was obtained from the UCI Machine Learning Repository (https://archive.
 
 ## Metrics
 The model was evaluated using precision score, recall score, and fbeta score, which values are 0.74, 0.27, and 0.4, respectively
+
+## Ethical Considerations
+
+This model was trained with a public dataset, which can be found [here](https://archive.ics.uci.edu/dataset/20/census+income). Therefore, there is no sensitive data. 
+
+## Caveats and Recommendations
+
+The model deployed can be used only for educational purposes.
+
